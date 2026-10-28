@@ -470,3 +470,8 @@ blockquote.quote cite { display: block; margin-top: 12px; font-size: .9rem; font
 .shop-body { padding: 20px 22px 24px; display: grid; gap: 8px; justify-items: start; }
 .shop-body h3 { font-size: 1.35rem; }
 .shop-body p { margin: 0; color: var(--muted); }
+
+/* ---------- AO Koropiou crest ---------- */
+.aok-btn .mini-crest img { width: 20px; height: auto; }
+.aok-card .shield { width: auto; height: 100px; }
+.aok-card .shield img { height: 100px; width: auto; }
