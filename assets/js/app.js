@@ -149,13 +149,14 @@
     }
   }
 
-  /* ---------- contact form (FormSubmit) ---------- */
+  /* ---------- contact form (Web3Forms) ---------- */
   const form = $("#contact-form");
   if (form) {
     if (new URLSearchParams(location.search).get("interest") === "merch") {
       const r = form.querySelector('input[value="Club merchandise"]'); if (r) r.checked = true;
     }
     const status = $("#form-status");
+    const mailLink = `<a href="mailto:${esc(CFG.email)}">${esc(CFG.email)}</a>`;
     form.addEventListener("submit", e => {
       e.preventDefault();
       if (!form.reportValidity()) return;
@@ -164,12 +165,13 @@
       const fd = new FormData(form);
       const payload = {};
       fd.forEach((v, k) => { if (k !== "_honey") payload[k] = v; });
-      payload._subject = `Website message: ${payload["Interested in"] || "Contact"} — ${payload.Name || ""}`;
-      payload._template = "table";
-      payload._replyto = payload.Email;
+      payload.access_key = CFG.formKey;
+      payload.subject = `Website message: ${payload["Interested in"] || "Contact"} - ${payload.Name || ""}`;
+      payload.from_name = "AO Koropiou USA TSC website";
+      payload.replyto = payload.Email;
       btn.disabled = true; const label = btn.textContent; btn.textContent = "Sending…";
       status.hidden = true;
-      fetch(`https://formsubmit.co/ajax/${encodeURIComponent(CFG.email)}`, {
+      fetch("https://api.web3forms.com/submit", {
         method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload)
       }).then(r => r.json().catch(() => ({}))).then(res => {
         const ok = res && (res.success === true || res.success === "true");
@@ -177,18 +179,14 @@
         if (ok) {
           status.className = "form-status ok"; status.textContent = "Thank you! Your message has been sent. We'll get back to you soon.";
           form.reset();
-        } else if (/activat/i.test(msg)) {
-          // First message to a new address: FormSubmit sends an activation email instead of delivering
-          status.className = "form-status err";
-          status.innerHTML = `This form hasn't been activated yet. An activation email has been sent to <b>${esc(CFG.email)}</b>. Once the link in it is clicked, messages will be delivered. Until then, please email us at <a href="mailto:${esc(CFG.email)}">${esc(CFG.email)}</a>.`;
         } else if (msg) {
-          // Any other explanation from FormSubmit, shown as it is
+          // Web3Forms' own explanation, shown as it is
           status.className = "form-status err";
-          status.innerHTML = `The message couldn't be sent: ${esc(msg)} You can also email us at <a href="mailto:${esc(CFG.email)}">${esc(CFG.email)}</a>.`;
+          status.innerHTML = `The message couldn't be sent: ${esc(msg)} You can also email us at ${mailLink}.`;
         } else throw new Error("failed");
       }).catch(() => {
         status.className = "form-status err";
-        status.innerHTML = `Sorry, the message couldn't be sent. Please check your connection and try again, or email us at <a href="mailto:${esc(CFG.email)}">${esc(CFG.email)}</a>.`;
+        status.innerHTML = `Sorry, the message couldn't be sent. Please check your connection and try again, or email us at ${mailLink}.`;
       }).finally(() => { status.hidden = false; btn.disabled = false; btn.textContent = label; status.scrollIntoView({ block: "nearest" }); });
     });
   }
