@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": "club-founded",
+      "date": "2026-10-23",
+      "tag": "Club news",
+      "title": "AO Koropiou USA Table Soccer Club is founded",
+      "summary": "A new Subbuteo club in DuPage County, Illinois, carrying the name and colors of AO Koropiou.",
+      "cover": { "big": "23.10", "small": "Founded 2026" },
+      "body": [
+        "On October 23, 2026, AO Koropiou USA Table Soccer Club was founded in DuPage County, Illinois.",
+        "We are a Subbuteo table soccer club, and we carry the name, colors and crest of AO Koropiou, the football club of Koropi, Greece, playing since 1903. Our purpose fits in one line: we play Subbuteo, and we promote AO Koropiou.",
+        "The club welcomes experienced players and complete beginners alike. If you have never flicked a Subbuteo figure before, we will teach you the game. What matters most to us is character: respect for opponents, for clubmates and for the game.",
+        "To try a game or join the club, send us a message through the Contact page or find us on Facebook."
+      ]
+    }
+  ],
+  "roots": [
+    { "date": "2019-07-27", "club": "Chicago TSC", "title": "Last meeting at Step Ahead Sports", "text": "A last get-together at Step Ahead Sports, home of Subbuteo in Illinois since early 2014. In those years Illinois clubs hosted two national tournaments and an international event there, along with countless practice sessions." },
+    { "date": "2018-06-10", "club": "Chicago TSC", "title": "USA Veterans Champion", "text": "Ilias won the 2018 US Veterans title, his first, coming from behind twice. Peter Alegi of Grand Rapids T.S.C. led 2-1 in the second half before Ilias found the equalizer." },
+    { "date": "2018-05-09", "club": "Chicago TSC", "title": "A visit from the US Champion", "text": "Three-time US Champion Dan Cranston came by for an evening of friendly matches. Dan won all three against Ilias: 6-0, 4-2 and 4-2." },
+    { "date": "2018-05-05", "club": "Chicago TSC", "title": "Flicko De Mayo 2018", "text": "At this ASA Open, FISTF Satellite and WASPA event, club players finished second and third in the individual competition, and the club won the Great Lakes Cup team challenge. Peter Alegi won the individual title." },
+    { "date": "2017-12-08", "club": "Chicago TSC", "title": "A new President for FISTF", "text": "Steve Dettre was elected President of the Federation International Sports Table Football, the sport's world governing body." },
+    { "date": "2017-11-19", "club": "Chicago TSC", "title": "Training day", "text": "A Sunday of practice matches with plenty of goals, and a chance to try out different equipment and teams." },
+    { "date": "2017-08-27", "club": "Chicago TSC", "title": "East Lansing Invitational 2017", "text": "Four players took part in the invitational in Michigan, and the club finished second." },
+    { "date": "2017-08-06", "club": "Chicago TSC", "title": "American Subbuteo National League, Round 2", "text": "Round 2 of the 2017 American Subbuteo National League was played in Rockford, Michigan, continuing the league that began in Illinois in February." },
+    { "date": "2017-08-05", "club": "Chicago TSC", "title": "ASA Nationals 2017", "text": "Players from nine states, including six current or former Team USA World Cup players, met in the Grand Rapids area. In the Open category, Mike Tillman and Dario Passadore reached the semi-finals." },
+    { "date": "2017-06-10", "club": "Chicago TSC", "title": "Brick Tamland Celebrity Classic 2017", "text": "Twelve players met in O'Fallon, Missouri, and the club won the tournament: Ilias beat Max Ambrosio of the Kansas City Table Soccer Club 3-0 in the final." },
+    { "date": "2017-05-07", "club": "Chicago TSC", "title": "Flicko De Mayo 2017", "text": "A round-robin tournament in Grand Rapids, Michigan, with plenty of matches for everyone. Grand Rapids took the team honors, the top three were only decided in the seventh and final round, and Peter Alegi finished just ahead of Ilias." },
+    { "date": "2017-02-05", "club": "Chicago TSC", "title": "American Subbuteo National League, Round 1", "text": "Together with the American Subbuteo Association, the club hosted Round 1 of the first American Subbuteo National League at the Step Ahead Sports complex, with every player in a single group." },
+    { "date": "2016-08-08", "club": "Chicago United TSC", "title": "2016 ASA Nationals and US FISTF International Open", "text": "Twenty-three players competed in Columbia, Maryland, on August 6 and 7. Christian Filippella won both the ASA National Open Championship and the US FISTF International Open." },
+    { "date": "2016-05-07", "club": "Chicago United TSC", "title": "Flicko De Mayo 2016", "text": "At this FISTF Satellite, ASA and WASPA event, the club won the first team title in its history, in a strong field of nine players from Illinois, Iowa, Florida, Maryland and Michigan." },
+    { "date": "2016-02-07", "club": "Chicago United TSC", "title": "Club meeting, February 2016", "text": "A get-together followed by a WASPA event. The first match, Tim Tumminaro against Ilias Gikas, finished in an action-packed 2-2 draw." },
+    { "date": "2015-08-08", "club": "Chicago United TSC", "title": "ASA Nationals 2015", "text": "The club hosted the ASA Nationals on August 8 and 9, 2015, with players travelling from several states. Zach Walker of Colorado was crowned national champion once again." },
+    { "date": "2015-08-08", "club": "Chicago United TSC", "title": "ESPN Deportes interview", "text": "Tim Tumminaro and Rocco Ysaguirre were interviewed by ESPN Deportes during its broadcast of the 2015 ASA Nationals." },
+    { "date": "2015-06-20", "club": "Chicago United TSC", "title": "Club meeting, June 2015", "text": "A club meeting to share ideas about the club and the game, followed by a six-player WASPA tournament." },
+    { "date": "2015-06-13", "club": "Chicago United TSC", "title": "Brick Tamland Celebrity Classic 2015", "text": "Ilias won the Celebrity Classic, beating Tim Boone 5-1 in the final, and Erik Haefke won the Jelly Bean Jamboree, beating Steve Laske 2-1 in overtime." },
+    { "date": "2015-05-02", "club": "Chicago United TSC", "title": "Flicko De Mayo 2015", "text": "In the semi-finals, Dario Passadore of Florida beat Ilias 3-2, and Erik Haefke beat Marcus Fila 5-2." }
+  ]
+}
