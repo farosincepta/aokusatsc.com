@@ -171,14 +171,24 @@
       status.hidden = true;
       fetch(`https://formsubmit.co/ajax/${encodeURIComponent(CFG.email)}`, {
         method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload)
-      }).then(r => r.json()).then(res => {
-        if (res && (res.success === true || res.success === "true")) {
+      }).then(r => r.json().catch(() => ({}))).then(res => {
+        const ok = res && (res.success === true || res.success === "true");
+        const msg = String((res && res.message) || "");
+        if (ok) {
           status.className = "form-status ok"; status.textContent = "Thank you! Your message has been sent. We'll get back to you soon.";
           form.reset();
-        } else throw new Error((res && res.message) || "failed");
+        } else if (/activat/i.test(msg)) {
+          // First message to a new address: FormSubmit sends an activation email instead of delivering
+          status.className = "form-status err";
+          status.innerHTML = `This form hasn't been activated yet. An activation email has been sent to <b>${esc(CFG.email)}</b>. Once the link in it is clicked, messages will be delivered. Until then, please email us at <a href="mailto:${esc(CFG.email)}">${esc(CFG.email)}</a>.`;
+        } else if (msg) {
+          // Any other explanation from FormSubmit, shown as it is
+          status.className = "form-status err";
+          status.innerHTML = `The message couldn't be sent: ${esc(msg)} You can also email us at <a href="mailto:${esc(CFG.email)}">${esc(CFG.email)}</a>.`;
+        } else throw new Error("failed");
       }).catch(() => {
         status.className = "form-status err";
-        status.innerHTML = `Sorry, the message couldn't be sent. Please email us at <a href="mailto:${esc(CFG.email)}">${esc(CFG.email)}</a>.`;
+        status.innerHTML = `Sorry, the message couldn't be sent. Please check your connection and try again, or email us at <a href="mailto:${esc(CFG.email)}">${esc(CFG.email)}</a>.`;
       }).finally(() => { status.hidden = false; btn.disabled = false; btn.textContent = label; status.scrollIntoView({ block: "nearest" }); });
     });
   }
